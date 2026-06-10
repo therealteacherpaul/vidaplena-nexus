@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VidaPlena Nexus</title>
+  <meta
+    name="description"
+    content="VidaPlena Nexus - sistema visual de gestão de eventos, beneficiários e inscrições para a ONG Vida Plena."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">VidaPlena Nexus</div>
+      <ul class="nav-links">
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#solucao">Solução</a></li>
+        <li><a href="#estrutura">Estrutura</a></li>
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="badge">Projeto acadêmico • UniFECAF</span>
+        <h1>VidaPlena Nexus</h1>
+        <p class="subtitle">
+          Sistema visual de gestão de eventos, beneficiários e inscrições
+          desenvolvido para a ONG Vida Plena com Airtable, formulário funcional
+          e automação.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#solucao" class="btn btn-primary">Ver solução</a>
+          <a href="#estrutura" class="btn btn-secondary">Ver modelagem</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Resumo do projeto</h3>
+        <ul>
+          <li>Cadastro de eventos</li>
+          <li>Cadastro de beneficiários</li>
+          <li>Histórico de inscrições</li>
+          <li>Interface visual organizada</li>
+          <li>Formulário funcional</li>
+          <li>Automação no Airtable</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="problema" class="section">
+      <div class="container">
+        <h2>O problema</h2>
+        <p>
+          A ONG Vida Plena realiza eventos de inclusão digital, capacitação
+          profissional e campanhas de saúde, mas enfrentava dificuldades para
+          organizar dados de eventos, beneficiários e histórico de participação.
+          O uso de planilhas manuais e grupos de WhatsApp gerava duplicidade,
+          desorganização e risco de perda de informações.
+        </p>
+
+        <div class="cards three">
+          <article class="card">
+            <h3>Desorganização</h3>
+            <p>
+              Informações espalhadas em planilhas e conversas, dificultando a
+              consulta e o acompanhamento.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Duplicidade</h3>
+            <p>
+              Registros repetidos e inconsistentes comprometiam a confiabilidade
+              dos dados.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Falta de histórico</h3>
+            <p>
+              Era difícil visualizar em quais eventos cada beneficiário havia
+              participado.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucao" class="section alt">
+      <div class="container">
+        <h2>A solução proposta</h2>
+        <p>
+          O projeto foi desenvolvido com <strong>Airtable</strong> como banco de
+          dados visual principal, permitindo a criação de tabelas relacionadas,
+          views organizadas, interface visual, formulário de inscrição e
+          automação funcional. A proposta foi pensada para ser prática, acessível
+          e fácil de usar por uma equipe sem perfil técnico.
+        </p>
+
+        <div class="highlight-box">
+          <div>
+            <h3>Objetivo central</h3>
+            <p>
+              Criar um sistema claro, visual e seguro para cadastrar eventos,
+              registrar beneficiários, acompanhar inscrições e reduzir falhas
+              operacionais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="estrutura" class="section">
+      <div class="container">
+        <h2>Estrutura do banco de dados</h2>
+        <p>
+          A modelagem foi baseada em três entidades principais, com
+          relacionamento muitos-para-muitos resolvido por uma tabela
+          intermediária.
+        </p>
+
+        <div class="cards three">
+          <article class="card entity-card">
+            <h3>Beneficiários</h3>
+            <p>
+              Armazena nome, idade, contato, e-mail, região e histórico de
+              inscrições.
+            </p>
+          </article>
+
+          <article class="card entity-card">
+            <h3>Eventos</h3>
+            <p>
+              Reúne dados como nome do evento, categoria, data, horário, local,
+              capacidade e status.
+            </p>
+          </article>
+
+          <article class="card entity-card">
+            <h3>Inscrições</h3>
+            <p>
+              Conecta beneficiários e eventos, registrando data da inscrição,
+              canal, status e identificador automático.
+            </p>
+          </article>
+        </div>
+
+        <div class="relationship-box">
+          <h3>Relacionamento</h3>
+          <p>
+            Um beneficiário pode participar de vários eventos, e um evento pode
+            ter vários beneficiários. Por isso, a tabela
+            <strong>Inscrições</strong> atua como ponte entre as duas entidades
+            principais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="funcionalidades" class="section alt">
+      <div class="container">
+        <h2>Funcionalidades implementadas</h2>
+
+        <div class="cards two">
+          <article class="card">
+            <h3>Base visual organizada</h3>
+            <ul class="feature-list">
+              <li>Cadastro de beneficiários</li>
+              <li>Cadastro de eventos</li>
+              <li>Controle de inscrições</li>
+              <li>IDs automáticos para inscrições</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Visualizações e interface</h3>
+            <ul class="feature-list">
+              <li>Views em grid</li>
+              <li>Calendário de eventos</li>
+              <li>Kanban por status</li>
+              <li>Interface com páginas dedicadas</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Formulário funcional</h3>
+            <ul class="feature-list">
+              <li>Formulário de inscrição tradicional</li>
+              <li>Teste realizado com sucesso</li>
+              <li>Entrada de dados estruturada</li>
+              <li>Integração com a tabela de inscrições</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Automação funcional</h3>
+            <ul class="feature-list">
+              <li>Automação criada no Airtable</li>
+              <li>Teste validado com sucesso</li>
+              <li>Atualização automática de status</li>
+              <li>Fluxo funcional demonstrado</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tecnologias" class="section">
+      <div class="container">
+        <h2>Tecnologias utilizadas</h2>
+
+        <div class="tech-grid">
+          <div class="tech-item">Airtable</div>
+          <div class="tech-item">Airtable Interfaces</div>
+          <div class="tech-item">Airtable Forms</div>
+          <div class="tech-item">Airtable Automations</div>
+          <div class="tech-item">GitHub</div>
+          <div class="tech-item">GitHub Pages</div>
+          <div class="tech-item">HTML</div>
+          <div class="tech-item">CSS</div>
+          <div class="tech-item">JavaScript</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Resultados esperados</h2>
+        <p>
+          Com o VidaPlena Nexus, a ONG passa a ter uma estrutura centralizada,
+          visual e organizada para acompanhar eventos, beneficiários e
+          inscrições. A solução também reduz falhas humanas, melhora a leitura
+          dos dados e pode ser expandida no futuro para novas integrações.
+        </p>
+
+        <div class="stats">
+          <div class="stat-card">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Tabelas principais</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-label">Páginas na interface</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="1">0</span>
+            <span class="stat-label">Automação funcional</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>VidaPlena Nexus</h3>
+        <p>Projeto acadêmico desenvolvido para a disciplina de Banco de Dados Visual.</p>
+      </div>
+      <div>
+        <p><strong>Aluno:</strong> Paulo Ricardo Takara Stefens</p>
+        <p><strong>Instituição:</strong> UniFECAF</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
