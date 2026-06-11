@@ -1,5 +1,14 @@
 const backToTopButton = document.getElementById("backToTop");
-const statNumbers = document.querySelectorAll(".stat-number");
+const metricNumbers = document.querySelectorAll(".metric-number");
+const revealElements = document.querySelectorAll(".reveal");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+}
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
@@ -16,11 +25,11 @@ backToTopButton.addEventListener("click", () => {
   });
 });
 
-const animateNumbers = () => {
-  statNumbers.forEach((number) => {
+const animateMetrics = () => {
+  metricNumbers.forEach((number) => {
     const target = Number(number.getAttribute("data-target"));
     let current = 0;
-    const increment = Math.max(1, Math.ceil(target / 30));
+    const increment = Math.max(1, Math.ceil(target / 25));
 
     const update = () => {
       current += increment;
@@ -36,15 +45,25 @@ const animateNumbers = () => {
   });
 };
 
-let hasAnimated = false;
+let metricsAnimated = false;
 
-window.addEventListener("scroll", () => {
-  const statsSection = document.querySelector(".stats");
-  if (!statsSection || hasAnimated) return;
+const revealOnScroll = () => {
+  revealElements.forEach((element) => {
+    const top = element.getBoundingClientRect().top;
+    if (top < window.innerHeight - 80) {
+      element.classList.add("visible");
+    }
+  });
 
-  const sectionTop = statsSection.getBoundingClientRect().top;
-  if (sectionTop < window.innerHeight - 80) {
-    animateNumbers();
-    hasAnimated = true;
+  const heroMetrics = document.querySelector(".hero-metrics");
+  if (heroMetrics && !metricsAnimated) {
+    const top = heroMetrics.getBoundingClientRect().top;
+    if (top < window.innerHeight - 60) {
+      animateMetrics();
+      metricsAnimated = true;
+    }
   }
-});
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);

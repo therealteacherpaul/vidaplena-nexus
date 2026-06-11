@@ -6,49 +6,81 @@
   <title>VidaPlena Nexus</title>
   <meta
     name="description"
-    content="VidaPlena Nexus - sistema visual de gestão de eventos, beneficiários e inscrições para a ONG Vida Plena."
+    content="VidaPlena Nexus - sistema visual de gestão de eventos, beneficiários e inscrições desenvolvido com Airtable, interface, formulários e automação."
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
-    <nav class="navbar">
-      <div class="logo">VidaPlena Nexus</div>
-      <ul class="nav-links">
+    <nav class="navbar container">
+      <div class="logo-wrap">
+        <div class="logo-mark">VN</div>
+        <div class="logo-text">
+          <strong>VidaPlena Nexus</strong>
+          <span>Projeto acadêmico • UniFECAF</span>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#problema">Problema</a></li>
         <li><a href="#solucao">Solução</a></li>
         <li><a href="#estrutura">Estrutura</a></li>
         <li><a href="#funcionalidades">Funcionalidades</a></li>
-        <li><a href="#tecnologias">Tecnologias</a></li>
+        <li><a href="#prints">Prints</a></li>
+        <li><a href="#evidencias">Evidências</a></li>
+        <li><a href="#acesso">Acesso</a></li>
       </ul>
     </nav>
 
-    <div class="hero-content">
-      <div class="hero-text">
-        <span class="badge">Projeto acadêmico • UniFECAF</span>
-        <h1>VidaPlena Nexus</h1>
+    <div class="hero-content container">
+      <div class="hero-text reveal">
+        <span class="badge">Airtable • Interface • Forms • Automations • GitHub Pages</span>
+        <h1>Gestão visual de eventos, beneficiários e inscrições</h1>
         <p class="subtitle">
-          Sistema visual de gestão de eventos, beneficiários e inscrições
-          desenvolvido para a ONG Vida Plena com Airtable, formulário funcional
-          e automação.
+          O <strong>VidaPlena Nexus</strong> foi desenvolvido para a ONG Vida Plena com foco em
+          organização de dados, histórico de participação, cadastro rápido e automação
+          de processos sem depender de programação tradicional.
         </p>
 
         <div class="hero-buttons">
-          <a href="#solucao" class="btn btn-primary">Ver solução</a>
-          <a href="#estrutura" class="btn btn-secondary">Ver modelagem</a>
+          <a href="#prints" class="btn btn-primary">Ver evidências</a>
+          <a href="#acesso" class="btn btn-secondary">Acessar projeto</a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <span class="metric-number" data-target="3">0</span>
+            <span class="metric-label">Tabelas principais</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number" data-target="5">0</span>
+            <span class="metric-label">Páginas na interface</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number" data-target="3">0</span>
+            <span class="metric-label">Formulários ativos</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number" data-target="1">0</span>
+            <span class="metric-label">Automação funcional</span>
+          </div>
         </div>
       </div>
 
-      <div class="hero-card">
-        <h3>Resumo do projeto</h3>
-        <ul>
-          <li>Cadastro de eventos</li>
-          <li>Cadastro de beneficiários</li>
-          <li>Histórico de inscrições</li>
-          <li>Interface visual organizada</li>
-          <li>Formulário funcional</li>
-          <li>Automação no Airtable</li>
-        </ul>
+      <div class="hero-panel reveal">
+        <div class="mini-card">
+          <h3>Resumo do projeto</h3>
+          <ul class="check-list">
+            <li>Banco visual relacional no Airtable</li>
+            <li>Dashboard administrativo com botões de ação</li>
+            <li>Cadastro de beneficiários e eventos</li>
+            <li>Inscrição de beneficiários em eventos</li>
+            <li>Formulários funcionais em nova guia</li>
+            <li>Automação testada com sucesso</li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -56,62 +88,74 @@
   <main>
     <section id="problema" class="section">
       <div class="container">
-        <h2>O problema</h2>
-        <p>
-          A ONG Vida Plena realiza eventos de inclusão digital, capacitação
-          profissional e campanhas de saúde, mas enfrentava dificuldades para
-          organizar dados de eventos, beneficiários e histórico de participação.
-          O uso de planilhas manuais e grupos de WhatsApp gerava duplicidade,
-          desorganização e risco de perda de informações.
-        </p>
+        <div class="section-heading reveal">
+          <span class="section-tag">Contexto</span>
+          <h2>O problema</h2>
+          <p>
+            A ONG Vida Plena precisava organizar melhor seus dados de eventos,
+            beneficiários e histórico de participação. Antes, essas informações
+            eram controladas por planilhas manuais e grupos de WhatsApp, o que
+            gerava desorganização, duplicidade e dificuldade de acompanhamento.
+          </p>
+        </div>
 
-        <div class="cards three">
-          <article class="card">
+        <div class="cards-grid three">
+          <article class="info-card reveal">
+            <div class="icon-circle">01</div>
             <h3>Desorganização</h3>
             <p>
-              Informações espalhadas em planilhas e conversas, dificultando a
-              consulta e o acompanhamento.
+              As informações estavam espalhadas, dificultando a leitura e o controle
+              operacional do projeto social.
             </p>
           </article>
 
-          <article class="card">
-            <h3>Duplicidade</h3>
+          <article class="info-card reveal">
+            <div class="icon-circle">02</div>
+            <h3>Duplicidade de dados</h3>
             <p>
-              Registros repetidos e inconsistentes comprometiam a confiabilidade
-              dos dados.
+              O mesmo beneficiário podia aparecer em mais de um lugar, reduzindo
+              a confiabilidade dos registros.
             </p>
           </article>
 
-          <article class="card">
+          <article class="info-card reveal">
+            <div class="icon-circle">03</div>
             <h3>Falta de histórico</h3>
             <p>
-              Era difícil visualizar em quais eventos cada beneficiário havia
-              participado.
+              Não havia uma forma clara de visualizar em quais eventos cada
+              beneficiário havia participado.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="solucao" class="section alt">
+    <section id="solucao" class="section section-alt">
       <div class="container">
-        <h2>A solução proposta</h2>
-        <p>
-          O projeto foi desenvolvido com <strong>Airtable</strong> como banco de
-          dados visual principal, permitindo a criação de tabelas relacionadas,
-          views organizadas, interface visual, formulário de inscrição e
-          automação funcional. A proposta foi pensada para ser prática, acessível
-          e fácil de usar por uma equipe sem perfil técnico.
-        </p>
+        <div class="section-heading reveal">
+          <span class="section-tag">Resposta</span>
+          <h2>A solução proposta</h2>
+          <p>
+            O projeto foi desenvolvido com <strong>Airtable</strong> como banco de dados visual
+            principal, aproveitando tabelas relacionadas, interface, formulários,
+            views e automações em um único ambiente. O objetivo foi criar uma
+            solução simples, organizada e acessível para usuários não técnicos.
+          </p>
+        </div>
 
-        <div class="highlight-box">
-          <div>
+        <div class="spotlight reveal">
+          <div class="spotlight-left">
             <h3>Objetivo central</h3>
             <p>
-              Criar um sistema claro, visual e seguro para cadastrar eventos,
-              registrar beneficiários, acompanhar inscrições e reduzir falhas
-              operacionais.
+              Criar um sistema visual capaz de cadastrar beneficiários, criar eventos,
+              registrar inscrições, manter histórico visível e reduzir falhas operacionais.
             </p>
+          </div>
+          <div class="spotlight-right">
+            <div class="pill">No-code</div>
+            <div class="pill">Baixa complexidade</div>
+            <div class="pill">Histórico visível</div>
+            <div class="pill">Acesso organizado</div>
           </div>
         </div>
       </div>
@@ -119,146 +163,324 @@
 
     <section id="estrutura" class="section">
       <div class="container">
-        <h2>Estrutura do banco de dados</h2>
-        <p>
-          A modelagem foi baseada em três entidades principais, com
-          relacionamento muitos-para-muitos resolvido por uma tabela
-          intermediária.
-        </p>
+        <div class="section-heading reveal">
+          <span class="section-tag">Modelagem</span>
+          <h2>Estrutura do banco de dados</h2>
+          <p>
+            A modelagem foi baseada em três entidades principais, com a tabela
+            de inscrições resolvendo o relacionamento muitos-para-muitos entre
+            beneficiários e eventos.
+          </p>
+        </div>
 
-        <div class="cards three">
-          <article class="card entity-card">
+        <div class="cards-grid three">
+          <article class="entity-card reveal">
             <h3>Beneficiários</h3>
             <p>
-              Armazena nome, idade, contato, e-mail, região e histórico de
-              inscrições.
+              Armazena nome completo, idade, contato, e-mail, região e o histórico
+              de inscrições.
             </p>
           </article>
 
-          <article class="card entity-card">
+          <article class="entity-card reveal">
             <h3>Eventos</h3>
             <p>
-              Reúne dados como nome do evento, categoria, data, horário, local,
+              Registra nome do evento, categoria, data, horário, local, região,
               capacidade e status.
             </p>
           </article>
 
-          <article class="card entity-card">
+          <article class="entity-card reveal">
             <h3>Inscrições</h3>
             <p>
-              Conecta beneficiários e eventos, registrando data da inscrição,
-              canal, status e identificador automático.
+              Faz a ligação entre beneficiários e eventos, registrando ID automático,
+              data da inscrição, canal e status.
             </p>
           </article>
         </div>
 
-        <div class="relationship-box">
-          <h3>Relacionamento</h3>
+        <div class="model-flow reveal">
+          <div class="flow-box">Beneficiários</div>
+          <div class="flow-arrow">↔</div>
+          <div class="flow-box flow-main">Inscrições</div>
+          <div class="flow-arrow">↔</div>
+          <div class="flow-box">Eventos</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="funcionalidades" class="section section-alt">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Implementação</span>
+          <h2>Funcionalidades implementadas</h2>
           <p>
-            Um beneficiário pode participar de vários eventos, e um evento pode
-            ter vários beneficiários. Por isso, a tabela
-            <strong>Inscrições</strong> atua como ponte entre as duas entidades
-            principais.
+            O sistema foi planejado para entregar organização operacional,
+            facilidade de uso e demonstração prática de um banco visual funcional.
           </p>
         </div>
-      </div>
-    </section>
 
-    <section id="funcionalidades" class="section alt">
-      <div class="container">
-        <h2>Funcionalidades implementadas</h2>
-
-        <div class="cards two">
-          <article class="card">
-            <h3>Base visual organizada</h3>
-            <ul class="feature-list">
-              <li>Cadastro de beneficiários</li>
-              <li>Cadastro de eventos</li>
-              <li>Controle de inscrições</li>
+        <div class="cards-grid two">
+          <article class="feature-card reveal">
+            <h3>Base visual relacional</h3>
+            <ul class="check-list">
+              <li>Tabelas conectadas por relacionamento</li>
+              <li>Lookups e contagens automáticas</li>
               <li>IDs automáticos para inscrições</li>
+              <li>Histórico por beneficiário</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3>Visualizações e interface</h3>
-            <ul class="feature-list">
-              <li>Views em grid</li>
+          <article class="feature-card reveal">
+            <h3>Views e visualização</h3>
+            <ul class="check-list">
+              <li>Grid views organizadas</li>
               <li>Calendário de eventos</li>
               <li>Kanban por status</li>
-              <li>Interface com páginas dedicadas</li>
+              <li>Leitura operacional facilitada</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3>Formulário funcional</h3>
-            <ul class="feature-list">
-              <li>Formulário de inscrição tradicional</li>
-              <li>Teste realizado com sucesso</li>
-              <li>Entrada de dados estruturada</li>
-              <li>Integração com a tabela de inscrições</li>
+          <article class="feature-card reveal">
+            <h3>Interface e dashboard</h3>
+            <ul class="check-list">
+              <li>Painel Administrativo como página inicial</li>
+              <li>Botão para novo beneficiário</li>
+              <li>Botão para novo evento</li>
+              <li>Botão para nova inscrição</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3>Automação funcional</h3>
-            <ul class="feature-list">
-              <li>Automação criada no Airtable</li>
-              <li>Teste validado com sucesso</li>
-              <li>Atualização automática de status</li>
-              <li>Fluxo funcional demonstrado</li>
+          <article class="feature-card reveal">
+            <h3>Formulários e automação</h3>
+            <ul class="check-list">
+              <li>Form de beneficiário</li>
+              <li>Form de evento</li>
+              <li>Form de inscrição</li>
+              <li>Automação funcional validada</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="tecnologias" class="section">
+    <section id="prints" class="section">
       <div class="container">
-        <h2>Tecnologias utilizadas</h2>
+        <div class="section-heading reveal">
+          <span class="section-tag">Galeria</span>
+          <h2>Prints do sistema</h2>
+          <p>
+            Abaixo estão algumas das evidências visuais da construção do projeto
+            no Airtable, incluindo tabelas, views, dashboard, interface, formulários
+            e automação.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_interface_dashboard.png" alt="Dashboard administrativo no Airtable" />
+            <figcaption>Dashboard / Painel Administrativo</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_interface_eventos.png" alt="Página de eventos na interface do Airtable" />
+            <figcaption>Interface - Eventos</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_interface_beneficiarios.png" alt="Página de beneficiários na interface do Airtable" />
+            <figcaption>Interface - Beneficiários</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_interface_inscricoes.png" alt="Página de inscrições na interface do Airtable" />
+            <figcaption>Interface - Inscrições</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_interface_calendario.png" alt="Página de calendário na interface do Airtable" />
+            <figcaption>Interface - Calendário</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_tabela_beneficiarios.png" alt="Tabela de beneficiários no Airtable" />
+            <figcaption>Tabela de beneficiários</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_tabela_eventos.png" alt="Tabela de eventos no Airtable" />
+            <figcaption>Tabela de eventos</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_tabela_inscricoes.png" alt="Tabela de inscrições no Airtable" />
+            <figcaption>Tabela de inscrições</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_calendario_eventos.png" alt="Calendário de eventos no Airtable" />
+            <figcaption>View de calendário</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_kanban_inscricoes_por_status.png" alt="Kanban de inscrições por status no Airtable" />
+            <figcaption>Kanban por status</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_form_beneficiario_novo.png" alt="Formulário de beneficiário" />
+            <figcaption>Formulário de beneficiário</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_form_evento_novo.png" alt="Formulário de evento" />
+            <figcaption>Formulário de evento</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_form_inscricao_novo.png" alt="Formulário de inscrição" />
+            <figcaption>Formulário de inscrição</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_form_inscricao_preenchido.png" alt="Formulário de inscrição preenchido" />
+            <figcaption>Formulário preenchido</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_form_inscricao_sucesso.png" alt="Mensagem de sucesso do formulário" />
+            <figcaption>Envio concluído com sucesso</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_automacao_status_inscricao.png" alt="Automação de status da inscrição" />
+            <figcaption>Automação configurada</figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal">
+            <img src="assets/airtable_prints/airtable_tabela_inscricoes_pos_testes.png" alt="Tabela de inscrições após os testes" />
+            <figcaption>Inscrições após os testes</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidencias" class="section section-alt">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Entrega</span>
+          <h2>Área de evidências do projeto</h2>
+          <p>
+            O projeto foi estruturado para atender ao escopo acadêmico com
+            banco visual, visualizações, formulários, interface, automação
+            funcional e demonstração com dados de teste.
+          </p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="evidence-card reveal">
+            <h3>Base estruturada</h3>
+            <p>
+              Foram criadas tabelas relacionadas para beneficiários, eventos e inscrições,
+              com campos automáticos, lookups e contagens de relacionamento.
+            </p>
+          </article>
+
+          <article class="evidence-card reveal">
+            <h3>Dashboard administrativo</h3>
+            <p>
+              Foi criada uma página inicial com calendário e botões de ação rápida
+              para cadastro de beneficiários, criação de eventos e novas inscrições.
+            </p>
+          </article>
+
+          <article class="evidence-card reveal">
+            <h3>Formulários testados</h3>
+            <p>
+              Foram implementados formulários separados para beneficiário, evento
+              e inscrição, com testes reais de funcionamento.
+            </p>
+          </article>
+
+          <article class="evidence-card reveal">
+            <h3>Automação validada</h3>
+            <p>
+              Uma automação funcional foi criada e testada no Airtable para atualizar
+              automaticamente o status da inscrição conforme a lógica definida.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="acesso" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Projeto</span>
+          <h2>Acesso ao projeto</h2>
+          <p>
+            O projeto foi desenvolvido em Airtable e complementado com uma página
+            pública em GitHub Pages para apresentação visual e documentação.
+          </p>
+        </div>
+
+        <div class="access-box reveal">
+          <div class="access-card">
+            <h3>Visualização do projeto no Airtable</h3>
+            <p>
+              Clique no botão abaixo para acessar a demonstração do projeto no Airtable.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://airtable.com/appJj6TiOdEunK6Fl/pagXu60vYoFnNGccS"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir projeto no Airtable
+            </a>
+          </div>
+
+          <div class="access-card">
+            <h3>Apresentação pública do projeto</h3>
+            <p>
+              Esta página foi construída com HTML, CSS e JavaScript e publicada no GitHub Pages
+              como apoio visual à entrega acadêmica.
+            </p>
+            <a
+              class="btn btn-secondary dark"
+              href="#top"
+              onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;"
+            >
+              Voltar ao topo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Tecnologias</span>
+          <h2>Tecnologias utilizadas</h2>
+        </div>
 
         <div class="tech-grid">
-          <div class="tech-item">Airtable</div>
-          <div class="tech-item">Airtable Interfaces</div>
-          <div class="tech-item">Airtable Forms</div>
-          <div class="tech-item">Airtable Automations</div>
-          <div class="tech-item">GitHub</div>
-          <div class="tech-item">GitHub Pages</div>
-          <div class="tech-item">HTML</div>
-          <div class="tech-item">CSS</div>
-          <div class="tech-item">JavaScript</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <h2>Resultados esperados</h2>
-        <p>
-          Com o VidaPlena Nexus, a ONG passa a ter uma estrutura centralizada,
-          visual e organizada para acompanhar eventos, beneficiários e
-          inscrições. A solução também reduz falhas humanas, melhora a leitura
-          dos dados e pode ser expandida no futuro para novas integrações.
-        </p>
-
-        <div class="stats">
-          <div class="stat-card">
-            <span class="stat-number" data-target="3">0</span>
-            <span class="stat-label">Tabelas principais</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number" data-target="4">0</span>
-            <span class="stat-label">Páginas na interface</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number" data-target="1">0</span>
-            <span class="stat-label">Automação funcional</span>
-          </div>
+          <div class="tech-item reveal">Airtable</div>
+          <div class="tech-item reveal">Airtable Interfaces</div>
+          <div class="tech-item reveal">Airtable Forms</div>
+          <div class="tech-item reveal">Airtable Automations</div>
+          <div class="tech-item reveal">GitHub</div>
+          <div class="tech-item reveal">GitHub Pages</div>
+          <div class="tech-item reveal">HTML</div>
+          <div class="tech-item reveal">CSS</div>
+          <div class="tech-item reveal">JavaScript</div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" id="top">
     <div class="container footer-content">
       <div>
         <h3>VidaPlena Nexus</h3>
